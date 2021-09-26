@@ -26,7 +26,7 @@
 			      		<th>Brand</th>
 			      		<th>Type</th>
 					    <th style="width:250px">Description</th>
-<!-- 					    <th>Action</th> -->
+					    <th>Action</th>
 			   		</tr>
 <!-- 			  	</thead> -->
 <!-- 			  	<tbody> -->
@@ -66,7 +66,7 @@
 		        	product_data += '<td>'+value.brand+'</td>';
 		        	product_data += '<td>'+value.type+'</td>';
 		        	product_data += '<td>'+value.description+'</td>';
-		        	product_data += '<td><a /*th:href="@{/api/products/{*/'+value.code+'}(code='+value.code+')}">Update</a></td>';
+		        	product_data += '<td><a /*th:href="@{/api/products/{*/'+value.code+'*/}(code=*/'+value.code+'/*)}*/">Update</a></td>';
 		        	product_data += '</tr>';
 		        });
 		        $('#productTable').append(product_data);
