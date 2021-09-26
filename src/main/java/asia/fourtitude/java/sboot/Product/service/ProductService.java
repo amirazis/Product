@@ -16,9 +16,9 @@ import asia.fourtitude.java.sboot.Product.repository.ProductRepository;
 public class ProductService {
 	
 	@Autowired
-	private ProductRepository productRepository;
+	private static ProductRepository productRepository;
 	
-	public List<Product> getAllProducts() {
+	public static List<Product> getAllProducts() {
 		List<Product> productList = new ArrayList<>();
 		productRepository.findAll()
 		.forEach(productList::add);
@@ -29,7 +29,7 @@ public class ProductService {
 		return productRepository.findByCode(code);
 	}
 
-	public void addProduct(Product product) {
+	public static void addProduct(Product product) {
 		productRepository.save(product);
 	}
 
@@ -37,9 +37,13 @@ public class ProductService {
 		productRepository.save(product);
 	}
 	
-	public void deleteProduct(String code) {
+	public static void deleteProduct(String code) {
 		Product p = productRepository.findByCode(code);
 		productRepository.delete(p);
+	}
+
+	public static Product getProductbyCode(String code) {
+		return productRepository.findByCode(code);
 	}
 
 }
